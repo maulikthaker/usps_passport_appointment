@@ -18,6 +18,17 @@ with open('po.csv', newline='') as csvfile:
             print(row[0], row[3])
             location.append(row[0])
 
+
+def getInfo(locid):
+    with open('po.csv', newline='') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in spamreader:
+            if row[0] == locid:
+                return ','.join(row[-4:-1])
+    return locid
+
+
+
 headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
         'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -51,8 +62,8 @@ url = 'https://tools.usps.com/UspsToolsRestServices/rest/v2/appointmentTimeSearc
 #                 print(x["appointmentStatus"], x['startTime'], x["startDateTime"], locid)
 
 # Month of March from Date 18-30
-
-for dt in range(18,30):
+location = ["1365969"]
+for dt in range(22,23):
     print(dt)
     for locid in location:
         # print("Location: ",locid)
@@ -64,4 +75,4 @@ for dt in range(18,30):
         for x in res["appointmentTimeDetailExtended"]:
             # if x["appointmentStatus"] == 'Closed':
             if x["appointmentStatus"] not in ['Unavailable', 'Closed','Past']:
-                print(x["appointmentStatus"], x['startTime'], x["startDateTime"], locid)
+                print(x["appointmentStatus"], x['startTime'], x["startDateTime"], getInfo(locid))
