@@ -62,8 +62,8 @@ url = 'https://tools.usps.com/UspsToolsRestServices/rest/v2/appointmentTimeSearc
 #                 print(x["appointmentStatus"], x['startTime'], x["startDateTime"], locid)
 
 # Month of March from Date 18-30
-location = ["1365969"]
-for dt in range(22,23):
+
+for dt in range(17,31):
     print(dt)
     for locid in location:
         # print("Location: ",locid)
