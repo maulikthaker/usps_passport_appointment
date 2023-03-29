@@ -1,10 +1,10 @@
-For Python Only execute these commands 
+#For Python Only execute these commands ( where 04 is a 2 digit month, 1 is the beginning of search and 2 is the end of search date )
 python test.py 04 1 2
 
 
 
 
-For Docker use these commands
+# For Docker use these commands
 docker build . -t pyt
 docker run -v {LOCATION OF YOU FILE}/test.py:/tmp/test.py -e PYTHONUNBUFFERED=1 pyt
 
