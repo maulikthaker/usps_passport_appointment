@@ -1,16 +1,24 @@
-# usps_passport_appointment
+For Python Only execute these commands 
+python test.py 04 1 2
 
+
+
+
+For Docker use these commands
+docker build . -t pyt
 docker run -v {LOCATION OF YOU FILE}/test.py:/tmp/test.py -e PYTHONUNBUFFERED=1 pyt
+
+
+
+
 
 
 Sample Output 
 
-18
-19
-20
-21
-22
+Date : 202203022
+Looking at location :2731 JUNCTION AVE,SAN JOSE,CA
+Looking at location :135 W 25TH AVE,SAN MATEO,CA
+Looking at location :4601 LAFAYETTE ST,SANTA CLARA,CA
 Available 02:00 PM 2022-03-22T14:00:00 500 STONE PINE RD,HALF MOON BAY,CA
 Available 02:30 PM 2022-03-22T14:30:00 500 STONE PINE RD,HALF MOON BAY,CA
 Available 02:45 PM 2022-03-22T14:45:00 500 STONE PINE RD,HALF MOON BAY,CA
-23
