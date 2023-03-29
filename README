@@ -6,7 +6,7 @@ python test.py 04 1 2
 
 # For Docker use these commands
 docker build . -t pyt
-docker run -v {LOCATION OF YOU FILE}/test.py:/tmp/test.py -e PYTHONUNBUFFERED=1 pyt
+docker run -v {LOCATION OF YOU FILE}/test.py:/tmp/test.py 04 1 4 -e PYTHONUNBUFFERED=1 pyt
 
 
 
